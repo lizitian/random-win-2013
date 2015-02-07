@@ -1,0 +1,48 @@
+# Project: random
+# Makefile created by Dev-C++ 5.4.2
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+RES      = random_private.res
+OBJ      = init.o main.o selectextra.o selectname.o wndproc.o refresh.o $(RES)
+LINKOBJ  = init.o main.o selectextra.o selectname.o wndproc.o refresh.o $(RES)
+LIBS     = -L"C:/Program Files/Dev-Cpp/MinGW32/lib" -static-libstdc++ -static-libgcc -mwindows -m32 -mwindows
+INCS     = -I"C:/Program Files/Dev-Cpp/MinGW32/include"
+CXXINCS  = -I"C:/Program Files/Dev-Cpp/MinGW32/include"
+BIN      = random.exe
+CXXFLAGS = $(CXXINCS) -ansi -march=i586 -mtune=i586 -Os -m32 -std=c99 -Wall -Wextra -mwindows -pipe
+CFLAGS   = $(INCS) -ansi -march=i586 -mtune=i586 -Os -m32 -std=c99 -Wall -Wextra -mwindows -pipe
+RM       = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+init.o: init.c
+	$(CC) -c init.c -o init.o $(CFLAGS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+selectextra.o: selectextra.c
+	$(CC) -c selectextra.c -o selectextra.o $(CFLAGS)
+
+selectname.o: selectname.c
+	$(CC) -c selectname.c -o selectname.o $(CFLAGS)
+
+wndproc.o: wndproc.c
+	$(CC) -c wndproc.c -o wndproc.o $(CFLAGS)
+
+refresh.o: refresh.c
+	$(CC) -c refresh.c -o refresh.o $(CFLAGS)
+
+random_private.res: random_private.rc res.rc 
+	$(WINDRES) -i random_private.rc -F pe-i386 --input-format=rc -o random_private.res -O coff 

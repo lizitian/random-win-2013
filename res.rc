@@ -1,0 +1,25 @@
+1 VERSIONINFO
+FILEVERSION     1,0,0,0
+PRODUCTVERSION  1,0,0,0
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "080404B0"
+    BEGIN
+      VALUE "CompanyName", "李子天"
+      VALUE "FileDescription", "2013中秋晚会"
+      VALUE "FileVersion", "1.0.0.0"
+      VALUE "InternalName", "2013-USTC-1320303-Mid-autumn"
+      VALUE "LegalCopyright", "Copyright 2013. All rights reserved by Zitian Li."
+      VALUE "OriginalFilename", "random.exe"
+      VALUE "ProductName", "2013中秋晚会"
+      VALUE "ProductVersion", "1.0.0.0"
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation",2052,1200
+  END
+END
+IDI_ICON ICON "icon.ico"
+BGBMP BITMAP "background.bmp"
